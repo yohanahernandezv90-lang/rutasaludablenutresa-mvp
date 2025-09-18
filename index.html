@@ -5,22 +5,35 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Ruta Saludable - Nutresa (MVP)</title>
   <link rel="stylesheet" href="css/styles.css">
+  <!-- Favicon (si subiste assets/images/favicon.ico) -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header class="hero">
-    <div class="container">
-      <h1>Descubre tu Ruta Saludable con Nutresa</h1>
-      <nav>
-        <a href="#survey">Encuesta</a>
-        <a href="#plate">Arma tu plato</a>
-        <a href="#challenges">Retos</a>
-        <a href="#recipes">Recetas</a>
-        <a href="#ebook">eBook</a>
-      </nav>
+    <div class="container" style="display:flex;align-items:center;gap:12px;">
+      <div>
+        <h1 style="margin:0">Descubre tu Ruta Saludable con Nutresa</h1>
+        <nav style="margin-top:8px;">
+          <a href="#survey">Encuesta</a>
+          <a href="#plate">Arma tu plato</a>
+          <a href="#challenges">Retos</a>
+          <a href="#recipes">Recetas</a>
+          <a href="#ebook">eBook</a>
+        </nav>
+      </div>
+      <div class="header-actions" style="margin-left:auto">
+        <span id="pointsDisplay" class="points-badge">Puntos: 0</span>
+      </div>
     </div>
   </header>
 
   <main class="container">
+    <!-- CONSEJO DEL DÍA -->
+    <section id="tip" class="card tip-card">
+      <h2>Consejo saludable del día</h2>
+      <p id="dailyTip">Cargando consejo...</p>
+    </section>
+
     <!-- ENCUESTA -->
     <section id="survey" class="card">
       <h2>Encuesta rápida</h2>
@@ -127,8 +140,15 @@
     <!-- EBOOK -->
     <section id="ebook" class="card">
       <h2>eBook recetas Nutresa</h2>
-      <p>Descarga el eBook con recetas saludables.</p>
-      <a id="ebookLink" href="assets/ebook.pdf" download class="btn hidden">Descargar eBook</a>
+      <p>Vista previa y descarga del eBook con recetas saludables.</p>
+
+      <!-- Preview embebido -->
+      <iframe class="ebook-preview" src="assets/ebook.pdf"></iframe>
+
+      <!-- Botón de descarga (se mostrará/desbloqueará por JS) -->
+      <p style="margin-top:12px;">
+        <a id="ebookLink" href="assets/ebook.pdf" download class="btn hidden">Descargar eBook</a>
+      </p>
       <p id="ebookHint" class="muted">Completa la encuesta o marca un reto para desbloquear.</p>
     </section>
 
